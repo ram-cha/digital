@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply text-gray-800 font-sans;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold leading-tight;
+  }
+}
+
+@layer components {
+  .container {
+    @apply px-4 mx-auto;
+  }
+  
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-md font-medium transition-all duration-300;
+  }
+  
+  .btn-primary {
+    @apply bg-blue-600 text-white hover:bg-blue-700;
+  }
+  
+  .btn-secondary {
+    @apply bg-white text-blue-600 hover:bg-gray-50 border border-blue-600;
+  }
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+/* Prevent content shift when scrollbar appears */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(200, 200, 200, 0.7) transparent;
+}
+
+html::-webkit-scrollbar {
+  width: 10px;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: rgba(200, 200, 200, 0.7);
+  border-radius: 20px;
+  border: 3px solid #fff;
+}
+
+/* Make scrollbar visible on hover */
+html::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(180, 180, 180, 0.9);
+}
